@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/thomasrasmussen.dev/static/css/main.e99089a9.chunk.css",
+    "main.js": "/thomasrasmussen.dev/static/js/main.930d52be.chunk.js",
+    "main.js.map": "/thomasrasmussen.dev/static/js/main.930d52be.chunk.js.map",
+    "runtime~main.js": "/thomasrasmussen.dev/static/js/runtime~main.8fcfafce.js",
+    "runtime~main.js.map": "/thomasrasmussen.dev/static/js/runtime~main.8fcfafce.js.map",
+    "static/js/2.38be8a37.chunk.js": "/thomasrasmussen.dev/static/js/2.38be8a37.chunk.js",
+    "static/js/2.38be8a37.chunk.js.map": "/thomasrasmussen.dev/static/js/2.38be8a37.chunk.js.map",
+    "index.html": "/thomasrasmussen.dev/index.html",
+    "precache-manifest.033c28f8f4da11a1de7f4e0e60521a1a.js": "/thomasrasmussen.dev/precache-manifest.033c28f8f4da11a1de7f4e0e60521a1a.js",
+    "service-worker.js": "/thomasrasmussen.dev/service-worker.js",
+    "static/css/main.e99089a9.chunk.css.map": "/thomasrasmussen.dev/static/css/main.e99089a9.chunk.css.map"
+  }
+}
