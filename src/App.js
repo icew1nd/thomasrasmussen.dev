@@ -17,6 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { background: null };
+    // Test
   }
 
   componentDidMount() {
