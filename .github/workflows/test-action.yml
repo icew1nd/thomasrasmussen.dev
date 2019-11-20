@@ -8,6 +8,6 @@ jobs:
 
     steps:
     - name: Hello world
-      uses: actions/some-test-action-12345@v1.0.1
+      uses: actions/some-test-action-12345@v1.0.2
       with:
         who-to-greet: 'Mona the Octocat'
