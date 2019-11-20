@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Hello world
-      uses: actions/some-test-action-12345@v1.0.2
+    - name: Some test action 12345
+      uses: action/some-test-action-12345@v.1.0.2
       with:
         who-to-greet: 'Mona the Octocat'
