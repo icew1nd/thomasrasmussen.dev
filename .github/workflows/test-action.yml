@@ -10,6 +10,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Some test action 12345
-        uses: ./.github/actions/my-action
+        uses: icew1nd/some-test-action-12345@v.1.0.5
         with:
           who-to-greet: "Mona the Octocat"
