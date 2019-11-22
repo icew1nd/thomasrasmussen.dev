@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://icew1nd.github.io/thomasrasmussen.dev",
   "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/github": "^1.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
