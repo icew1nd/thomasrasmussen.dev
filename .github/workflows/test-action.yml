@@ -1,13 +1,13 @@
 name: Node CI
 
-on: [pull_request]
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Some test action 12345
-      uses: icew1nd/some-test-action-12345@v.1.0.4
-      with:
-        who-to-greet: 'Mona the Octocat'
+      - name: Some test action 12345
+        uses: ./.github/actions/my-action
+        with:
+          who-to-greet: "Mona the Octocat"
