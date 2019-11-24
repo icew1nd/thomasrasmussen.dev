@@ -22,26 +22,45 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="me" />
           <h2 className="Name">Thomas Kjær-Rasmussen</h2>
-          <i className="Tagline">Frontend Nerd in Fintech 🎉</i>
+          <i className="Tagline">
+            Frontend Nerd in Fintech{" "}
+            <span role="img" aria-label="Tada">
+              🎉
+            </span>
+          </i>
           <div className="Socials">
-            <a href="https://twitter.com/ThomasR______" target="_blank">
+            <a
+              href="https://twitter.com/ThomasR______"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={twitter} className="Social" alt="Twitter" />
             </a>
-            <a href="https://medium.com/@vvvsejvvv" target="_blank">
+            <a
+              href="https://medium.com/@vvvsejvvv"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={medium} className="Social" alt="Medium" />
             </a>
-            <a href="https://github.com/icew1nd" target="_blank">
+            <a
+              href="https://github.com/icew1nd"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={github} className="Social" alt="GitHub" />
             </a>
             <a
               href="https://www.linkedin.com/in/thomas-kj%C3%A6r-rasmussen-8428a954/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img src={linkedin} className="Social" alt="LinkedIn" />
             </a>
             <a
               href="https://www.facebook.com/profile.php?id=100001125740147"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img src={facebook} className="Social" alt="Facebook" />
             </a>

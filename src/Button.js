@@ -1,6 +1,5 @@
 import React from "react";
 import night from "./assets/night.svg";
-import day from "./assets/day.svg";
 import "./Button.css";
 
 function Button(props) {
