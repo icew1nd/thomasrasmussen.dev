@@ -1,4 +1,4 @@
-name: Pull Request Notifier
+name: Pull Request Workflow
 
 on: [pull_request]
 
@@ -7,13 +7,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ZEIT Now Deployment
-        uses: amondnet/now-deployment@v1
-        with:
-          github-token: ${{ secrets.GH_TOKEN }}
-          zeit-token: ${{ secrets.ZEIT_TOKEN }}
-          zeit-team-id: team_XXXXXXXXXXX
-          now-args: '--prod'
+      - name: ESLint checks
+        uses: gimenete/eslint-action@1.0
+      - name: Run Jest
+        uses: stefanoeb/jest-action@1.0.0
       - name: GitHub Action for Slack
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
