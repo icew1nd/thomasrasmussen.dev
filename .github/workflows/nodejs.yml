@@ -7,14 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: deploy now
-        env:
-          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
-        run: now --no-clipboard -t ${ZEIT_TOKEN} -m commit=${GITHUB_SHA} -m branch=${GITHUB_REF}
-      - uses: iam4x/now-deploy-preview-comment@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+      - name: Deploy on ZEIT Now
+        uses: amondnet/now-deployment@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          zeit-token: ${{ secrets.ZEIT_TOKEN }}
+          zeit-team-id: team_XXXXXXXXXXX
+          now-args: '--prod'
       - name: GitHub Action for Slack
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
