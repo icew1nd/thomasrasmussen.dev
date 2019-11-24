@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - name: deploy now
+      - name: deploy now
         env:
           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
         run: now --no-clipboard -t ${ZEIT_TOKEN} -m commit=${GITHUB_SHA} -m branch=${GITHUB_REF}
