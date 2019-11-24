@@ -10,7 +10,7 @@ jobs:
       - name: Deploy on ZEIT Now
         uses: amondnet/now-deployment@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
           zeit-token: ${{ secrets.ZEIT_TOKEN }}
           zeit-team-id: team_XXXXXXXXXXX
           now-args: '--prod'
