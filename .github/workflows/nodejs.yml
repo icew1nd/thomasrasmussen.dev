@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy on ZEIT Now
+      - name: ZEIT Now Deployment
         uses: amondnet/now-deployment@v1
         with:
           github-token: ${{ secrets.GH_TOKEN }}
