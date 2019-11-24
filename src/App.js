@@ -1,109 +1,55 @@
-import React, { Component } from "react";
-
-import profilePic from "./assets/0.jpeg";
+import React from "react";
+import useLocalStorage from "./hooks/useLocalStorage";
+import logo from "./assets/me.jpg";
+import facebook from "./assets/facebook.svg";
+import github from "./assets/github.svg";
+import linkedin from "./assets/linkedin.svg";
+import medium from "./assets/medium.svg";
+import twitter from "./assets/twitter.svg";
 import "./App.css";
-import { SocialIcon } from "react-social-icons";
-import Trianglify from "trianglify";
-import TypeOut from "react-typeout";
-import { throttle, debounce } from "throttle-debounce";
-
-const words = [
-  "By the way this page is open source and available on GitHub 🎉.",
-  "Hey! I'm Thomas Kjær-Rasmussen, I work with backend, frontend and anything in between.",
-  "Send me a message if you need anything 🔥."
-];
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { background: null };
-  }
-
-  componentDidMount() {
-    // window.addEventListener("resize", throttle(500, this.trianglifyBackground));
-    this.trianglifyBackground();
-  }
-  trianglifyBackground = (withFade = false) => {
-    var pattern = new Trianglify({
-      width: window.innerWidth,
-      height: window.innerHeight
-    });
-    if (withFade) {
-      this.setState({
-        changingBackground: true,
-        background: pattern.png()
-      });
-
-      setTimeout(() => {
-        this.setState({
-          changingBackground: false
-        });
-      }, 1000);
-    } else {
-      this.setState({
-        background: pattern.png()
-      });
-    }
+import Button from "./Button";
+function App() {
+  const click = () => {
+    setNightmode(!nightmode);
   };
-  render() {
-    console.log(this.state.changingBackground);
-    const style = {
-      backgroundImage: "url(" + this.state.background + ")",
-      height: window.innerHeight + "px",
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat"
-    };
-
-    return (
-      <div
-        className={this.state.changingBackground ? "fade-out-in" : "App"}
-        style={style}
-      >
-        <header className="social-header fade-in">
-          <img
-            onMouseEnter={this.trianglifyBackground}
-            alt="Hey"
-            class="icon profile-pic"
-            src={profilePic}
-          />
-          <div class="icon wiggle">
-            <SocialIcon url="https://twitter.com/ThomasR______" />
-          </div>
-          <div class="icon wiggle">
-            <SocialIcon url="https://medium.com/@vvvsejvvv" />
-          </div>
-          <div class="icon wiggle">
-            <SocialIcon url="https://www.facebook.com/profile.php?id=100001125740147" />
-          </div>
-          <div class="icon wiggle">
-            <SocialIcon url="https://www.linkedin.com/in/thomas-kj%C3%A6r-rasmussen-8428a954/" />
-          </div>
-          <div class="icon wiggle">
-            <SocialIcon url="https://github.com/icew1nd" />
-          </div>
-
-          <div
-            style={{
-              position: "absolute",
-              bottom: 120,
-              left: 230,
-              alignSelf: "right"
-            }}
-          >
-            <div class="speech-bubble">
-              <TypeOut
-                typeSpeed={50}
-                rewindSpeed={20}
-                pauseSpeed={4000}
-                words={words}
-              />
-              {/* Hey! I'm Thomas Kjær-Rasmussen and this is my place on the web */}
-            </div>
+  const [nightmode, setNightmode] = useLocalStorage(true);
+  return (
+    <div className={nightmode ? "Night" : "Day"}>
+      <div className="Nightmode">
+        <Button checked={nightmode} handleClicked={click} />
+      </div>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="me" />
+          <h2 className="Name">Thomas Kjær-Rasmussen</h2>
+          <i className="Tagline">Frontend Nerd in Fintech 🎉</i>
+          <div className="Socials">
+            <a href="https://twitter.com/ThomasR______" target="_blank">
+              <img src={twitter} className="Social" alt="Twitter" />
+            </a>
+            <a href="https://medium.com/@vvvsejvvv" target="_blank">
+              <img src={medium} className="Social" alt="Medium" />
+            </a>
+            <a href="https://github.com/icew1nd" target="_blank">
+              <img src={github} className="Social" alt="GitHub" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/thomas-kj%C3%A6r-rasmussen-8428a954/"
+              target="_blank"
+            >
+              <img src={linkedin} className="Social" alt="LinkedIn" />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=100001125740147"
+              target="_blank"
+            >
+              <img src={facebook} className="Social" alt="Facebook" />
+            </a>
           </div>
         </header>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
