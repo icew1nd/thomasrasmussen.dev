@@ -3,6 +3,14 @@ name: Pull Request Workflow
 on: [pull_request]
 
 jobs:
+  lovebot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Some test action 12345
+        uses: icew1nd/some-test-action-12345@v.1.0.7
+        with:
+          gh-token: ${{ secrets.GH_TOKEN }}
   build:
     runs-on: ubuntu-latest
   
@@ -23,12 +31,16 @@ jobs:
           npm test
         env:
           CI: true
-      - name: GitHub Action for Slack
-        env:
+  slack:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: GitHub Action for Slack
+       env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: ThisIsMyUsername # Optional.
           SLACK_CHANNEL: testing-stuff-out # Optional.
           SLACK_OVERRIDE_MESSAGE: "Custom message" # Optional.
         uses: Ilshidur/action-slack@1.0.1
         with:
-          args: "A new commit has been pushed."
+          args: "A new pull request has been created!"
