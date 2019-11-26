@@ -12,6 +12,8 @@ function App() {
   const click = () => {
     setNightmode(!nightmode);
   };
+  
+  //
   const [nightmode, setNightmode] = useLocalStorage(true);
   return (
     <div className={nightmode ? "Night" : "Day"}>
