@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: Some test action 12345
-        uses: icew1nd/some-test-action-12345@v.1.0.10
+        uses: icew1nd/some-test-action-12345@v.1.0.11
         with:
           gh-token: ${{ secrets.GH_TOKEN }}
   build:
