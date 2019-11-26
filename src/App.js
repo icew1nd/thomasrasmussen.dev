@@ -8,7 +8,7 @@ import medium from "./assets/medium.svg";
 import twitter from "./assets/twitter.svg";
 import "./App.css";
 import Button from "./Button";
-function App() {
+function App() { //
   const click = () => {
     setNightmode(!nightmode);
   };
