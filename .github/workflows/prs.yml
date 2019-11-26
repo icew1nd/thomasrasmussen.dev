@@ -37,10 +37,10 @@ jobs:
     steps:
      - name: GitHub Action for Slack
        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: ThisIsMyUsername # Optional.
-          SLACK_CHANNEL: testing-stuff-out # Optional.
-          SLACK_OVERRIDE_MESSAGE: "Custom message" # Optional.
-        uses: Ilshidur/action-slack@1.0.1
-        with:
-          args: "A new pull request has been created!"
+         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+         SLACK_USERNAME: ThisIsMyUsername # Optional.
+         SLACK_CHANNEL: testing-stuff-out # Optional.
+         SLACK_OVERRIDE_MESSAGE: "Custom message" # Optional.
+       uses: Ilshidur/action-slack@1.0.1
+       with:
+         args: "A new pull request has been created!"
