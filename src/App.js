@@ -9,6 +9,7 @@ import twitter from "./assets/twitter.svg";
 import "./App.css";
 import Button from "./Button";
 function App() {
+  // test 2
   const click = () => {
     setNightmode(!nightmode);
   };
